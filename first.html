@@ -1,15 +1,13 @@
 <script>
-    function helloRohit(callBack,val){
+    function helloRohit(){
         setTimeout(() => {
             console.log("Hello Rohit...");
-            callBack(val+2);
         }, 2000);
     }
 
-    function helloRahul(callBack){
+    function helloRahul(){
         setTimeout(() => {
             console.log("Hello Rahul...");
-            callBack()
         }, 1000);
     }
 
@@ -19,4 +17,10 @@
         }, 1500);
     }
     
+    const code = async()=>{
+        await helloRahul();
+        await helloRohit();
+        await helloVishal();
+    }
+
 </script>
