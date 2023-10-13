@@ -1,0 +1,41 @@
+<script>
+    function removeGarbage() {
+        return new Promise((resolved, rejected) => {
+            if (40 % 2 == 0) {
+                setTimeout(() => {
+                    resolved()
+                }, 3000);
+            }
+            else {
+                rejected();
+            }
+        })
+    }
+    function roomCleaned() {
+        return new Promise((resolved, rejected) => {
+            if (49 % 2 == 1) {
+                setTimeout(() => {
+                    resolved()
+                }, 2000);
+            }
+            else {
+                setTimeout(() => {
+                    rejected();
+                }, 3000);
+            }
+        })
+    }
+    function getIcecream() {
+        console.log("You got a 🍧 for cleanig the room");
+    }
+
+    const executedFunction = ()=>{
+        return new Promise()
+    }
+    executedFunction().all([removeGarbage,roomCleaned]).then(() => {
+        console.log("You got a 🍧 for cleanig the room");
+    }).catch(() => {
+        console.log("You did not got a 🍧 for cleanig the room");
+    });
+
+</script>
