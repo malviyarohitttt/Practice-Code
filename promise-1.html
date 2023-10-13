@@ -1,0 +1,50 @@
+<script>
+    function removeGarbage() {
+        return new Promise((resolved, rejected) => {
+            if (40 % 2 == 0) {
+                setTimeout(() => {
+                    resolved()
+                }, 3000);
+            }
+            else {
+                rejected();
+            }
+        })
+    }
+    function roomCleaned() {
+        return new Promise((resolved, rejected) => {
+            if (49 % 2 == 1) {
+                setTimeout(() => {
+                    resolved()
+                }, 2000);
+            }
+            else {
+                setTimeout(() => {
+                    rejected();
+                }, 3000);
+            }
+        })
+    }
+    function getIcecream() {
+        console.log("You got a 🍧 for cleanig the room");
+    }
+
+    removeGarbage().then(() => {
+        console.log("Garbage Removed");
+        roomCleaned().then(() => {
+            console.log("Room Cleaned");
+            getIcecream();
+        }).catch(() => {
+            console.log("Room not cleaned");
+            console.log("You did not get a 🍧 for cleanig the room");
+        })
+    }).catch(() => {
+        setTimeout(() => {
+            console.log("Garbage is not removed");
+            console.log("Room is not cleaned");
+            console.log("You did not get a 🍧 for cleanig the room");          
+        }, 2000);
+    });
+
+
+</script>

@@ -1,0 +1,31 @@
+<script>
+    function helloRohit(CallBack){
+        setTimeout(() => {
+            console.log("Hello Rohit");
+            CallBack();
+        }, 3000);
+    }
+    function helloVishal(CallBack){
+        setTimeout(() => {
+            console.log("Hello Vishal");
+            CallBack();
+        }, 1000);
+    }
+    function helloDevansh(CallBack){
+        setTimeout(() => {
+            console.log("Hello Devansh");
+            CallBack();
+        }, 1500);
+    }
+
+    // CallBack Hell/Peramid of doom
+    helloRohit(()=>{
+        helloDevansh(()=>{
+            helloVishal(()=>{
+            })
+        })
+    });
+
+    
+
+</script>
