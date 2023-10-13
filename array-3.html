@@ -1,3 +1,27 @@
 <script>
-    console.log("Hello Rohit");
+    var arr1 = [20,50,30,60,55,80,80,80,98,100];
+    var arr2 = ["Rohit","Mohit","DJ","Vishal"];
+
+    // concat is used to merge to arrays 
+    var arr3 = arr1.concat(arr2)
+    console.log(arr3);
+
+    // join is used to join all the elements of array with specific operator
+    var arr4 = arr3.join("-");
+    console.log(arr4);
+
+    // includes checks the value is present or not 
+    console.log(arr4.includes("Rohit"));
+    
+    // indexOf is used to find the index of given value 
+    console.log(arr3.indexOf("Rohit"));
+
+    // lastIndexOf returns the last index of given vaule
+    console.log(arr1.lastIndexOf(80));
+
+    // valueOf returns the value of original array 
+    console.log(arr1.valueOf());
+    
+    
+
 </script>
