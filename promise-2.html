@@ -29,10 +29,7 @@
         console.log("You got a 🍧 for cleanig the room");
     }
 
-    const executedFunction = ()=>{
-        return new Promise()
-    }
-    executedFunction().all([removeGarbage,roomCleaned]).then(() => {
+    Promise.all([removeGarbage(),roomCleaned()]).then(() => {
         console.log("You got a 🍧 for cleanig the room");
     }).catch(() => {
         console.log("You did not got a 🍧 for cleanig the room");
