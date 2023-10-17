@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Form Validator</title>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <form action="">
+            <div class="<div class=" form-group">
+                <label for="username">UserName</label>
+                <input onkeyup="validateUserName()" type="text" id="username" class="form-control"
+                    placeholder="Enter UserName">
+                <small id="userNameError" style="color: red;">UserNameError</small><br><br>
+
+                <label for="password">Password</label>
+                <input onkeyup="validatePassword()" type="password" id="password" class="form-control"
+                    placeholder="Enter Password">
+                <small id="passwordError" style="color: red;">PasswordError</small><br><br>
+
+            </div>
+            <div class="form-group">
+                <button onclick="return validateForm()" type="submit" class="btn btn-success" id="submitBtn">Sign
+                    Up</button>
+            </div>
+    </div>
+    </form>
+    </div>
+    <script>
+
+        function validatePassword() {
+            var status = true;
+            var password = document.querySelector("#password").value;
+            var passwordError = document.querySelector("#passwordError");
+
+            if (password.length == 0) {
+                passwordError.innerHTML = "Please Enter Password";
+                passwordError.style.color = "red"; 
+                status = false;
+            } else if (password.length < 8) {
+                passwordError.innerHTML = "Password Must Contain at Least 8 Characters";
+                passwordError.style.color = "red"; 
+                status = false;
+            } else {
+                passwordError.innerHTML = "";
+                status = true;
+            }
+            return status;
+        }
+
+
+        function validateUserName() {
+            var status = true;
+            var userName = document.querySelector("#username").value;
+            var userNameError = document.querySelector("#userNameError");
+            
+            if (userName.length == 0) {
+                userNameError.innerHTML = "Please Enter UserName";
+                // userNameError.style.color = "red";
+                status = false;
+            }
+            else {
+                userNameError.innerHTML = "";
+                status = true;
+            }
+            return status;
+        }
+
+        function validateForm() {
+            var userNameStatus = validateUserName();
+            var passwordStatus = validatePassword();
+            if (userNameStatus && passwordStatus) {
+                return true;
+            }
+            return false;
+        }
+    </script>
+</body>
