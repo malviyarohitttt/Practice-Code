@@ -15,16 +15,16 @@
                 <label for="username">UserName</label>
                 <input onkeyup="validateUserName()" type="text" id="username" class="form-control"
                     placeholder="Enter UserName">
-                <small id="userNameError" style="color: red;"></small><br><br>
+                <small id="userNameError"></small><br><br>
 
                 <label for="password">Password</label>
                 <input onkeyup="validatePassword()" type="password" id="password" class="form-control"
                     placeholder="Enter Password">
-                <small id="passwordError" style="color: red;"></small><br><br>
+                <small id="passwordError"></small><br><br>
 
                 <label for="mobileNumber">Mobile Number</label>
                 <input onkeyup="validateMobileNumber()" type="number" id="mobileNumber" class="form-control" placeholder="Enter Mobile Number">
-                <small id="mobileNumberError" style="color: red;"></small><br><br>
+                <small id="mobileNumberError"></small><br><br>
 
 
             </div>
@@ -44,10 +44,12 @@
 
             if(mobileNumber.length==0){
                 mobileNumberError.innerHTML="Please Enter Mobile Number";
+                mobileNumberError.style.color="red";
                 status = false;
             }
             else if(mobileNumber.length<10){
                 mobileNumberError.innerHTML="Mobile Number Must Contains 10 Digits";
+                mobileNumberError.style.color="red";
                 status = false;
             }
             else{
@@ -89,7 +91,7 @@
             
             if (userName.length == 0) {
                 userNameError.innerHTML = "Please Enter UserName";
-                // userNameError.style.color = "red";
+                userNameError.style.color = "red";
                 status = false;
             }
             else {
