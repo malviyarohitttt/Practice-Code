@@ -8,7 +8,7 @@ function createHeader(){
     headerDivElement.setAttribute("style","height:70px");
     headerDivElement.setAttribute("class","bg-dark row");
     
-    var divLogo = document.createElement("div");
+    var divLogo = document.createElement("div"); 
     divLogo.setAttribute("class","col-md-3  border border-danger h-100");
    
     var h1 = document.createElement("h1");
@@ -71,7 +71,7 @@ function createHeader(){
  
    mainDiv.appendChild(divContainer);
  }
- 
+
  function setData(data){
     data = JSON.stringify(data);
     localStorage.setItem("productList",data);
