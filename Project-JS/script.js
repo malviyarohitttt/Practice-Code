@@ -88,16 +88,16 @@ function createCart(data) {
     cartInfoDiv.setAttribute("style", "height:200px !important");
 
     var pName = document.createElement("h6");
-    pName.innerHTML = "Name : <span>Pname</span>";
+    pName.innerHTML = "Name : <span>" + product.title + "</span>";;
 
     var pPrice = document.createElement("h6");
-    pPrice.innerHTML = "Price : <span>pPrice</span>";
+    pPrice.innerHTML = "Price : <span>" + product.price + "$</span>";;
 
     var pRating = document.createElement("h6");
-    pRating.innerHTML = "Rating : <span>pRating</span>";
+    pRating.innerHTML = "Rating : <span>" + product.rating + "⭐</span>";;
 
     var pDiscription = document.createElement("h6");
-    pDiscription.innerHTML = "Discription : <span>pDiscription</span>";
+    pDiscription.innerHTML = "Description : <span>" + product.description + "</span>";;
 
     cartContainer.appendChild(cart);
     rowDiv.appendChild(cartContainer);
