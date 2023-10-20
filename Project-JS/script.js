@@ -43,7 +43,7 @@ function createHeader() {
   if (!sessionStorage.getItem("isLoggedIn")) {
      var signInOption = document.createElement("span");
      signInOption.innerText = "Sign In";
-     signInOption.setAttribute("class", "text-white");
+     signInOption.setAttribute("class", "text-white btn btn-primary");
      signInOption.setAttribute("style", "cursor:pointer;");
      signInOption.addEventListener("click", async function () {
         await cleanCart();
@@ -51,7 +51,7 @@ function createHeader() {
      });
      var signUpOption = document.createElement("span");
      signUpOption.innerText = "Sign Up";
-     signUpOption.setAttribute("class", "text-white ml-3");
+     signUpOption.setAttribute("class", "text-white ml-3 btn btn-primary");
      signUpOption.setAttribute("style", "cursor:pointer;");
 
      // Applying click event on sign up
@@ -65,7 +65,7 @@ function createHeader() {
   } else {
      var viewCartOption = document.createElement("span");
      viewCartOption.innerText = "View cart";
-     viewCartOption.setAttribute("class", "text-white ml-3");
+     viewCartOption.setAttribute("class", "text-white ml-3 btn btn-primary");
      viewCartOption.setAttribute("style", "cursor:pointer;");
 
      viewCartOption.addEventListener("click", function () {
@@ -90,7 +90,7 @@ function createHeader() {
 
      var signOutOption = document.createElement("span");
      signOutOption.innerText = "Sign Out";
-     signOutOption.setAttribute("class", "text-white ml-3");
+     signOutOption.setAttribute("class", "text-white ml-3 btn btn-primary");
      signOutOption.setAttribute("style", "cursor:pointer;");
      optionContainer.appendChild(signOutOption);
 
@@ -120,8 +120,8 @@ function generateForm(buttonText) {
   );
 
   var colDiv = document.createElement("div");
-  colDiv.setAttribute("class", "col-md-4 border border-success");
-  colDiv.setAttribute("style", "height:250px; margin-top:100px;");
+  colDiv.setAttribute("class", "col-md-5 border border-success d-flex justify-content-center align-items-center flex-column");
+  colDiv.setAttribute("style", "height:400px; margin-top:100px;");
 
   var formHeading = document.createElement("h2");
   formHeading.innerText = buttonText;
