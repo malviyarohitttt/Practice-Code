@@ -3,14 +3,14 @@ function createHeader() {
 
   var headerContainer = document.createElement("div");
   headerContainer.setAttribute("class", "container-fluid");
+  headerContainer.setAttribute("style","position:relative;");
 
   var headerDivElement = document.createElement("div");
-  headerDivElement.setAttribute("style", "height:70px");
-  headerDivElement.setAttribute("class", "bg-dark row");
+  headerDivElement.setAttribute("style", "height:70px; position:fixed; width:100%; z-index:99; padding:0 70px ");
+  headerDivElement.setAttribute("class", "bg-dark row d-flex justify-content-between align-items-center");
+
 
   var divLogo = document.createElement("div");
-  divLogo.setAttribute("class", "col-md-3 h-100");
-
   var h1 = document.createElement("h1");
   h1.innerHTML = "<span class='text-success'>e</span>-shop";
   h1.setAttribute("class", "text-white");
@@ -24,21 +24,21 @@ function createHeader() {
 
   var searchInputContainer = document.createElement("div");
   searchInputContainer.setAttribute(
-     "class",
-     "d-flex align-items-center justify-content-center col-md-6 h-100 "
+     "style",
+     "width: 60%; text-align: center;"
   );
 
   var searchInput = document.createElement("input");
   searchInput.setAttribute("type", "text");
   searchInput.setAttribute("placeholder", "Search product");
-  searchInput.setAttribute("style", "width:80%;padding:5px; height:40px;");
+  searchInput.setAttribute("style", "width:80%;padding:0 20px; height:40px; border-radius:5px; border:none;");
 
   searchInputContainer.appendChild(searchInput);
 
   var optionContainer = document.createElement("div");
   optionContainer.setAttribute(
      "class",
-     "d-flex justify-content-center align-items-center col-md-3 h-100"
+     ""
   );
   if (!sessionStorage.getItem("isLoggedIn")) {
      var signInOption = document.createElement("span");
@@ -192,13 +192,14 @@ function createCart(data) {
   var divContainer = document.createElement("div");
   divContainer.setAttribute("class", "container");
   divContainer.setAttribute("id", "cart-container");
+  divContainer.setAttribute("style","padding-top:5.5rem;")
   var rowDiv = document.createElement("div");
   rowDiv.setAttribute("class", "row");
 
   for (let product of data) {
      var cartContainer = document.createElement("div");
      cartContainer.setAttribute("class", "col-md-4 p-3");
-     cartContainer.setAttribute("style", "height:400px; margin-top:48px");
+     cartContainer.setAttribute("style", "height:400px; margin-bottom:48px");
      var cart = document.createElement("div");
      cart.setAttribute(
         "class",
@@ -214,10 +215,11 @@ function createCart(data) {
      var titleElement = document.createElement("h5");
      titleElement.innerText = product.title;
      titleElement.setAttribute("class", "text-center mt-2");
+     titleElement.setAttribute("style","width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;");
      cart.appendChild(titleElement);
 
      var priceElement = document.createElement("h4");
-     priceElement.innerText = product.price + " Rs.";
+     priceElement.innerText = product.price + "$";
      priceElement.setAttribute("class", "text-center text-success mt-2");
      cart.appendChild(priceElement);
 
