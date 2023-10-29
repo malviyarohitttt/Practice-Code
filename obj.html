@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+    <script>
+        const books = [
+            { title: "Book One", publish: 1900, edision: 4 },
+            { title: "Book Two", publish: 1800, edision: 1 },
+            { title: "Book Three", publish: 1985, edision: 2 },
+            { title: "Book Four", publish: 1988, edision: 3 },
+            { title: "Book Five", publish: 2010, edision: 1 },
+            { title: "Book Sixth", publish: 2006, edision: 3 },
+            { title: "Book Seven", publish: 2020, edision: 4 }
+        ]
+
+        const newBooks = books.filter( (book)=> { return book.publish <=2000 && book.edision ==2});
+        console.log(newBooks);
+    </script>
+</body>
+
+</html>
