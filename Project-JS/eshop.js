@@ -548,12 +548,13 @@ function search(keywords) {
    });
    if (user) window.alert("Email id already taken");
    else {
+    let body = document.getElementsByTagName("body");
      let user = { email, password };
      userList.push(user);
      localStorage.setItem("user-list", JSON.stringify(userList));
      window.alert("Sign up success...");
-     document.quervreySelector("#main").innerHTML="";
-     createHeader(searchInput);
+    //  body.innerHTML="";
+    //  createHeader(searchInput);
      document.getElementById("cart-container").remove();
      createCart(JSON.parse(localStorage.getItem("productList")));
    }
